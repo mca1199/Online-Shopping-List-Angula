@@ -1,0 +1,80 @@
+<style>
+    td{
+    border-style:ridge; 
+    text-align: center;
+}
+table{
+    margin: auto;
+    margin-top: 35px;
+    margin-bottom: 25px;
+}
+.trhead{
+    background-color: black;
+    color: white;
+}
+h1{
+    text-align: center;
+}
+.container {
+        display: block;
+        margin-left: auto;
+    }
+   
+    .sub-btn {
+        background: #1f80e0;
+        height: 28px;
+        padding: 0 20px;
+        color: #fff;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 12px;
+        margin: 0 10px;
+    }
+    h4{
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 18px;
+        color: brown;
+    }
+</style>
+<h4>Product Search By Serial Number</h4>
+<form form #productsForm="ngForm" (ngSubmit)="getProduct(productsForm.value)">
+<div class="container">
+    <input type="text" ngModel name="barand" class="search-box" placeholder="Enter The Modele Number" />
+    <button class="sub-btn">Search</button>
+</div>
+</form>
+
+<h1>Product List</h1>
+<table>
+    <tr class="trhead">
+         <td>Serial Number</td>
+        <td>Modele Number</td>
+        <td>Barand</td>
+        <td>Processer</td>
+        <td>Genration</td>
+        <td>Price</td>
+        <td>Garanty</td>
+        <td>Product Type</td>
+        <td>Action</td>
+       
+
+    </tr>
+    <tr *ngFor="let product of products">
+        <td>{{product.serial_Number}}</td>
+        <td>{{product.modele_Number}}</td>
+        <td>{{product.barand}}</td>
+        <td>{{product.processer}}</td>
+        <td>{{product.generation}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.garanty}}</td>
+        <td>{{product.product_Type}}</td>
+        <td><button>Add to Cart</button></td>
+        <td><button>Product Oder</button></td>
+       
+    </tr>
+
+</table>
+
