@@ -1,0 +1,225 @@
+<style>
+  body {
+
+    background: linear-gradient(to right, #ffffff 0%, #fafafa 50%, #ffffff 99%);
+  }
+
+  .products-add-form {
+    font-family: "Roboto", sans-serif;
+    width: 650px;
+    margin: 30px auto;
+
+    background: linear-gradient(to right, #78a7ba 0%, #385D6C 50%, #78a7ba 99%);
+    border-radius: 10px;
+  }
+
+
+  .form-header {
+    background-color: #1BBA93;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .form-header h1 {
+    font-size: 30px;
+    text-align: center;
+    color: #666;
+    padding: 20px 0;
+    border-bottom: 1px solid #cccccc;
+  }
+
+  .form-body {
+    padding: 10px 40px;
+    color: #666;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-body .label-title {
+    color: black;
+    font-size: 17px;
+    font-weight: bold;
+
+  }
+
+
+  .form-body .form-input {
+    font-size: 17px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 34px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: rgb(20, 219, 13);
+    text-align: left;
+    border: 1px solid #d6d6d6;
+    border-radius: 4px;
+    /* background: black; */
+    outline: none;
+  }
+
+  .horizontal-group .left {
+    float: left;
+    width: 100%;
+  }
+
+  .horizontal-group .left1 {
+    float: left;
+    width: 49%;
+  }
+
+  .horizontal-group .right {
+    float: right;
+    width: 49%;
+  }
+
+  .horizontal-group .right1 {
+    float: right;
+    width: 49%;
+    margin-top: 10px;
+  }
+
+  input[type="file"] {
+    outline: none;
+    cursor: pointer;
+    font-size: 17px;
+  }
+
+  #range-label {
+    width: 15%;
+    padding: 5px;
+    background-color: #1BBA93;
+    color: white;
+    border-radius: 5px;
+    font-size: 17px;
+    position: relative;
+    top: -8px;
+  }
+
+
+  ::-webkit-input-placeholder {
+    color: #d9d9d9;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 10px;
+    background-color: #1BBA93;
+    font-size: 17px;
+    border: none;
+    border-radius: 5px;
+    color: #bcf5e7;
+    cursor: pointer;
+    width: 20%;
+    margin-top: 10px;
+    margin: 10px;
+  }
+
+  .btn:hover {
+    background-color: #169c7b;
+    color: white;
+  }
+
+  hr {
+    margin-top: 20px;
+    width: 80%;
+  }
+
+  .or {
+    background-color: white;
+    width: 30px;
+    margin: -19px auto 10px;
+  }
+
+  td {
+    border-style: ridge;
+    text-align: center;
+  }
+
+  table {
+    margin: auto;
+    margin-top: 35px;
+    margin-bottom: 25px;
+  }
+
+  .trhead {
+    background-color: black;
+    color: white;
+  }
+
+  h1 {
+    text-align: center;
+  }
+</style>
+
+<body>
+
+  <div class="products-add-form">
+
+
+    <form #productsForm="ngForm" (ngSubmit)="getProductsFromData(productsForm.value)">
+
+
+      <div class="form-header">
+        <h1>Add Products</h1>
+      </div>
+      <div class="form-body">
+        <div class="horizontal-group">
+          <div class="form-group left1">
+            <label for="serialnumber" class="label-title">Serial Number*</label>
+            <input type="text" ngModel name="serial_Number" class="form-input" placeholder="Serial Number"
+              required="required" />
+          </div>
+          <div class="form-group right">
+            <label for="modelnumber" class="label-title">Module Number*</label>
+            <input type="text" ngModel name="modele_Number" class="form-input" placeholder="Module Number" />
+          </div>
+        </div>
+        <div class="horizontal-group">
+          <div class="form-group left1">
+            <label for="brand" class="label-title">Barand Name*</label>
+            <input type="text" ngModel name="barand" class="form-input" placeholder="Brand Name" required="required" />
+          </div>
+          <div class="form-group right">
+            <label for="processer" class="label-title">Processer *</label>
+            <input type="text" ngModel name="processer" class="form-input" placeholder="Processer" />
+          </div>
+        </div>
+        <div class="horizontal-group">
+          <div class="form-group left1">
+            <label for="genration" class="label-title">Generation*</label>
+            <input type="text" ngModel name="generation" class="form-input" placeholder="Generation"
+              required="required" />
+          </div>
+          <div class="form-group right">
+            <label for="price" class="label-title">Price *</label>
+            <input type="text" ngModel name="price" class="form-input" placeholder="Price ₹.." />
+          </div>
+        </div>
+        <div class="horizontal-group">
+          <div class="form-group left1">
+            <label for="garanty" class="label-title">Garanty*</label>
+            <input type="text" ngModel name="garanty" class="form-input" placeholder="Garanty" required="required" />
+          </div>
+          <div class="form-group right">
+            <label for="producttype" class="label-title">Product Type*</label>
+            <input type="text" ngModel name="product_Type" class="form-input" placeholder="Product_Type" />
+          </div>
+        </div>
+
+        <div class="form-footer">
+          <button class="btn">
+            Add</button>
+
+          <button class="btn"><a routerLink="../product-view">View</a></button>
+        </div>
+
+      </div>
+    </form>
+
+  </div>
+
+
+</body>
